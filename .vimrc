@@ -21,6 +21,9 @@ filetype plugin indent on
 " insert mappings
 imap <S-Tab> <C-o>
 
+" margins
+set colorcolumn=81
+
 " normal mappings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

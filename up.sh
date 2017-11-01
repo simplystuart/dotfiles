@@ -43,7 +43,9 @@ curl -L https://iterm2.com/shell_integration/zsh \
   clean-css-cli \
   elm \
   elm-css \
+  elm-format \
   elm-github-install \
+  elm-oracle \
   elm-test \
   react-native-cli \
   uglify-js \

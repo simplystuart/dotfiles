@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'elmcast/elm-vim'
 Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
@@ -32,7 +33,12 @@ nnoremap <C-H> <C-W><C-H>
 
 " silver searcher
 if executable('ag')
-  set grepprg=ag
+  let g:ackprg = 'ag --vimgrep --smart-case'
+
+  cnoreabbrev ag Ack
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
+  cnoreabbrev AG Ack
 endif
 
 " spelling

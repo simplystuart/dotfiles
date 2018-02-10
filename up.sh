@@ -3,7 +3,9 @@
 # INSTALL 
 
 ## brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+INSTALL="https://raw.githubusercontent.com/Homebrew/install/master/install"
+
+/usr/bin/ruby -e "$(curl -fsSL ${INSTALL})"
 
 /usr/local/bin/cask install xquartz
 
@@ -32,7 +34,8 @@
   zsh
 
 ## colors
-/usr/local/bin/git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+/usr/local/bin/git clone https://github.com/chriskempson/base16-shell.git \
+  ~/.config/base16-shell
 
 ## iterm2
 curl -L https://iterm2.com/shell_integration/zsh \

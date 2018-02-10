@@ -3,9 +3,8 @@
 # INSTALL 
 
 ## brew
-INSTALL="https://raw.githubusercontent.com/Homebrew/install/master/install"
-
-/usr/bin/ruby -e "$(curl -fsSL ${INSTALL})"
+BREW="https://raw.githubusercontent.com/Homebrew/install/master/install"
+/usr/bin/ruby -e "$(curl -fsSL ${BREW})"
 
 /usr/local/bin/cask install xquartz
 
@@ -72,10 +71,14 @@ mkdir ~/.ssh
 mkdir -p ~/.vim/tmp
 
 ## symlinks
+ln -s $(pwd)/bootup /usr/local/bin/bootup
+sudo ln -s $(pwd)/com.user.bootup.plist \
+  /Library/LaunchDaemons/com.user.bootup.plist
+
 ln -s ~/Dropbox/.gitconfig ~/.gitconfig
 ln -s ~/Dropbox/.ssh/config ~/.ssh/config
-ln -s $(pwd)/.agignore ~/.agignore
-ln -s $(pwd)/.inputrc ~/.agignore
-ln -s $(pwd)/.tmux.conf ~/.tmux.conf
-ln -s $(pwd)/.vimrc ~/.vimrc
-ln -s $(pwd)/.zshrc ~/.zshrc
+ln -s $(pwd)/../.agignore ~/.agignore
+ln -s $(pwd)/../.inputrc ~/.agignore
+ln -s $(pwd)/../.tmux.conf ~/.tmux.conf
+ln -s $(pwd)/../.vimrc ~/.vimrc
+ln -s $(pwd)/../.zshrc ~/.zshrc

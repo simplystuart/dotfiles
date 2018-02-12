@@ -12,3 +12,12 @@ ssh -t root@$ip "apt update \
   && git clone $REPO \
   && ./dotfiles/ubuntu/up.sh \
 "
+
+echo "upgrade script done..."
+
+printf "colorscheme: "
+read colorscheme
+
+ssh -t root@$ip "zsh ~/.zshrc base16_materia"
+
+echo "done!"

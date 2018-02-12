@@ -7,3 +7,4 @@
 
 ## ubuntu
 1. Run `./ubuntu/load.sh` on local machine
+2. Add alias to `.ssh/config`

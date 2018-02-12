@@ -6,11 +6,11 @@ DIR="$(pwd)/$(dirname $0)"
 # INSTALL 
 
 ## brew
-/usr/bin/ruby -e "$(curl -fsSL ${BREW})"
+ruby -e "$(curl -fsSL ${BREW})"
 
-/usr/local/bin/cask install xquartz
+cask install xquartz
 
-/usr/local/bin/brew install \
+brew install \
   ffmpeg \
   git \
   mysql \
@@ -35,7 +35,7 @@ DIR="$(pwd)/$(dirname $0)"
   zsh
 
 ## colors
-/usr/local/bin/git clone https://github.com/chriskempson/base16-shell.git \
+git clone https://github.com/chriskempson/base16-shell.git \
   ~/.config/base16-shell
 
 ## iterm2
@@ -43,7 +43,7 @@ curl -L https://iterm2.com/shell_integration/zsh \
   -o ~/.iterm2_shell_integration.zsh
 
 ## npm
-/user/local/bin/npm install -g \
+npm install -g \
   clean-css-cli \
   elm \
   elm-css \
@@ -66,7 +66,6 @@ chsh -s /usr/local/bin/zsh
 function tmux_append {
   echo $1 | sudo tee -a $DIR/../.tmux.conf
 }
-
 tmux_append "bind-key -Tcopy-mode-vi 'v' send -X begin-selection"
 tmux_append "bind-key -Tcopy-mode-vi 'y' send -X copy-selection"
 tmux_append "source-file $DIR/../tmux.conf"
@@ -86,10 +85,10 @@ ln -s $DIR/bootup /usr/local/bin/bootup
 sudo ln -s $DIR/com.user.bootup.plist \
   /Library/LaunchDaemons/com.user.bootup.plist
 
-ln -s ~/Dropbox/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/.ssh/config ~/.ssh/config
-ln -s $DIR/../agignore ~/.agignore
-ln -s $DIR/../inputrc ~/.inputrc
-ln -s $DIR/../vimrc ~/.vimrc
-ln -s $DIR/../zshrc ~/.zshrc
-ln -s $DIR/../.tmux.conf ~/.tmux.conf
+ln -sf ~/Dropbox/.gitconfig ~/.gitconfig
+ln -sf ~/Dropbox/.ssh/config ~/.ssh/config
+ln -sf $DIR/../agignore ~/.agignore
+ln -sf $DIR/../inputrc ~/.inputrc
+ln -sf $DIR/../vimrc ~/.vimrc
+ln -sf $DIR/../zshrc ~/.zshrc
+ln -sf $DIR/../.tmux.conf ~/.tmux.conf

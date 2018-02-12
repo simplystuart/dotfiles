@@ -61,10 +61,8 @@ mkdir ~/.ssh
 mkdir -p ~/.vim/tmp
 
 ## symlinks
-ln -s ~/Dropbox/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/.ssh/config ~/.ssh/config
-ln -s $DIR/../.agignore ~/.agignore
-ln -s $DIR/../.inputrc ~/.agignore
-ln -s $DIR/../.vimrc ~/.vimrc
-ln -s $DIR/../.zshrc ~/.zshrc
-ln -s $DIR/../.tmux.conf ~/.tmux.conf
+ln -sf $DIR/../agignore ~/.agignore
+ln -sf $DIR/../inputrc ~/.inputrc
+ln -sf $DIR/../vimrc ~/.vimrc
+ln -sf $DIR/../zshrc ~/.zshrc
+ln -sf $DIR/../.tmux.conf ~/.tmux.conf

@@ -4,7 +4,7 @@ DIR="$(pwd)/$(dirname $0)"
 
 # INSTALL 
 
-## apt-get
+## apt
 apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   build-essential \
   htop \
@@ -13,19 +13,25 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   npm \
   ruby-dev \
   silversearcher-ag \
+  software-properties-common \
   tmux \
   wget \
   vim \
   zsh
 
+## certbot
+add-apt-repository -y ppa:certbot/certbot \
+  && apt-update \
+  && apt install -y add-apt-repository ppa:certbot/certbot
+
 ## colors
 git clone https://github.com/chriskempson/base16-shell.git \
   ~/.config/base16-shell
 
-
 ## iterm2
 curl -L https://iterm2.com/shell_integration/zsh \
   -o ~/.iterm2_shell_integration.zsh
+
 ## npm
 npm install -g \
   clean-css-cli \

@@ -81,7 +81,7 @@ sudo ln -s $(pwd)/com.user.bootup.plist \
 ln -s ~/Dropbox/.gitconfig ~/.gitconfig
 ln -s ~/Dropbox/.ssh/config ~/.ssh/config
 ln -s $(pwd)/../.agignore ~/.agignore
-ln -s $(pwd)/../.inputrc ~/.agignore
+ln -s $(pwd)/../.inputrc ~/.inputrc
 ln -s $(pwd)/../.vimrc ~/.vimrc
 ln -s $(pwd)/../.zshrc ~/.zshrc
 ln -s $(pwd)/tmux.conf ~/.tmux.conf

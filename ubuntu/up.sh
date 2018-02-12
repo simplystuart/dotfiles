@@ -6,6 +6,7 @@ DIR="$(pwd)/$(dirname $0)"
 
 ## apt
 apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
+  automysqlbackup \
   build-essential \
   htop \
   libffi-dev/xenial \ # for sass gem

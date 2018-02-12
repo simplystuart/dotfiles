@@ -72,7 +72,7 @@ vim -c :PlugInstall -c :qa
 # FINISH
 
 ## cron
-CRON="0 0 * * * cd $DIR/../ && git pull origin master"
+CRON="0 0 * * * cd $DIR/../ && git pull origin master >/dev/null 2>&1"
 
 printf "$(crontab -u root -l)\n$CRON\n" | crontab -u root -
 

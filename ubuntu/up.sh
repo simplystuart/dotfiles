@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DIR="$(pwd)/$(dirname $0)"
+
 # INSTALL 
 
 ## apt-get
@@ -55,8 +57,8 @@ mkdir -p ~/.vim/tmp
 ## symlinks
 ln -s ~/Dropbox/.gitconfig ~/.gitconfig
 ln -s ~/Dropbox/.ssh/config ~/.ssh/config
-ln -s $(pwd)/../.agignore ~/.agignore
-ln -s $(pwd)/../.inputrc ~/.agignore
-ln -s $(pwd)/../.vimrc ~/.vimrc
-ln -s $(pwd)/../.zshrc ~/.zshrc
-ln -s $(pwd)/tmux.conf ~/.tmux.conf
+ln -s $DIR/../.agignore ~/.agignore
+ln -s $DIR/../.inputrc ~/.agignore
+ln -s $DIR/../.vimrc ~/.vimrc
+ln -s $DIR/../.zshrc ~/.zshrc
+ln -s $DIR/../tmux.conf ~/.tmux.conf

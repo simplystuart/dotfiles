@@ -5,12 +5,13 @@ DIR="$(pwd)/$(dirname $0)"
 # INSTALL 
 
 ## apt-get
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y \
+apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   build-essential \
-  git \
   htop \
-  nodejs \
-  ruby \
+  libffi-dev/xenial \ # for sass gem
+  nodejs-legacy
+  npm \
+  ruby-dev \
   silversearcher-ag \
   tmux \
   wget \
@@ -18,11 +19,15 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y \
   zsh
 
 ## colors
-/usr/local/bin/git clone https://github.com/chriskempson/base16-shell.git \
+git clone https://github.com/chriskempson/base16-shell.git \
   ~/.config/base16-shell
 
+
+## iterm2
+curl -L https://iterm2.com/shell_integration/zsh \
+  -o ~/.iterm2_shell_integration.zsh
 ## npm
-/user/local/bin/npm install -g \
+npm install -g \
   clean-css-cli \
   elm \
   elm-css \
@@ -45,7 +50,6 @@ chsh -s /usr/bin/zsh
 function tmux_append {
   echo $1 | sudo tee -a $DIR/../.tmux.conf
 }
-
 tmux_append "bind-key -t vi-copy v begin-selection"
 tmux_append "bind-key -t vi-copy y copy-pipe \"xclip -sel clip -i\""
 tmux_append "source-file $DIR/../tmux.conf"
@@ -57,7 +61,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # FINISH
 
 ## dirs 
-mkdir ~/.ssh
 mkdir -p ~/.vim/tmp
 
 ## symlinks

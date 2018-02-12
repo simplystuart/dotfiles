@@ -60,6 +60,9 @@ gem install colorls pry sass
 echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
 
+## tmux
+echo "source-file $(pwd)/../.tmux.conf" | sudo tee -a $(pwd)/tmux.conf
+
 ## vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -79,6 +82,6 @@ ln -s ~/Dropbox/.gitconfig ~/.gitconfig
 ln -s ~/Dropbox/.ssh/config ~/.ssh/config
 ln -s $(pwd)/../.agignore ~/.agignore
 ln -s $(pwd)/../.inputrc ~/.agignore
-ln -s $(pwd)/../.tmux.conf ~/.tmux.conf
 ln -s $(pwd)/../.vimrc ~/.vimrc
 ln -s $(pwd)/../.zshrc ~/.zshrc
+ln -s $(pwd)/tmux.conf ~/.tmux.conf

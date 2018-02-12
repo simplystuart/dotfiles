@@ -10,8 +10,8 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   automysqlbackup \
   build-essential \
   htop \
-  libffi-dev/xenial \ # for sass gem
-  nodejs-legacy
+  libffi-dev/xenial \
+  nodejs-legacy \
   npm \
   ruby-dev \
   silversearcher-ag \
@@ -23,8 +23,8 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
 
 ## certbot
 add-apt-repository -y ppa:certbot/certbot \
-  && apt-update \
-  && apt install -y add-apt-repository ppa:certbot/certbot
+  && apt update \
+  && apt install -y python-certbot-apache
 
 printf "$(crontab -u root -l)\n$CERTBOTCRON\n" | crontab -u root -
 

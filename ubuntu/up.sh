@@ -3,7 +3,7 @@
 CERTBOTCRON="30 2 * * 1 certbot renew"
 DIR="$(pwd)/$(dirname $0)"
 
-# INSTALL 
+# INSTALL
 
 ## apt
 apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
@@ -70,6 +70,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim -c :PlugInstall -c :qa
 
 # FINISH
+
+## cron
+CRON="0 0 * * * cd $DIR/../ && git pull origin master"
+
+printf "$(crontab -u root -l)\n$CRON\n" | crontab -u root -
 
 ## dirs 
 mkdir -p ~/.vim/tmp

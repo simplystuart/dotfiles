@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+CERTBOTCRON="30 2 * * 1 certbot renew"
 DIR="$(pwd)/$(dirname $0)"
 
 # INSTALL 
@@ -24,6 +25,8 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
 add-apt-repository -y ppa:certbot/certbot \
   && apt-update \
   && apt install -y add-apt-repository ppa:certbot/certbot
+
+printf "$(crontab -u root -l)\n$CERTBOTCRON\n" | crontab -u root -
 
 ## colors
 git clone https://github.com/chriskempson/base16-shell.git \

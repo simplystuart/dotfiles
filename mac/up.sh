@@ -63,7 +63,13 @@ echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
 
 ## tmux
-echo "source-file $(pwd)/../.tmux.conf" | sudo tee -a $(pwd)/tmux.conf
+function tmux_append {
+  echo $1 | sudo tee -a $DIR/../.tmux.conf
+}
+
+tmux_append "bind-key -Tcopy-mode-vi 'v' send -X begin-selection"
+tmux_append "bind-key -Tcopy-mode-vi 'y' send -X copy-selection"
+tmux_append "source-file $DIR/../tmux.conf"
 
 ## vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -86,4 +92,4 @@ ln -s $DIR/../agignore ~/.agignore
 ln -s $DIR/../inputrc ~/.inputrc
 ln -s $DIR/../vimrc ~/.vimrc
 ln -s $DIR/../zshrc ~/.zshrc
-ln -s $DIR/../tmux.conf ~/.tmux.conf
+ln -s $DIR/../.tmux.conf ~/.tmux.conf

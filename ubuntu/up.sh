@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CERTBOTCRON="30 2 * * 1 certbot renew"
+CRONTAB=$(crontab -u root -l)
 DIR="$(pwd)/$(dirname $0)"
 
 # INSTALL
@@ -23,19 +23,27 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   zsh
 
 ## certbot
-add-apt-repository -y ppa:certbot/certbot \
-  && apt update \
-  && apt install -y python-certbot-apache
+CRON="30 2 * * 1 certbot renew"
 
-printf "$(crontab -u root -l)\n$CERTBOTCRON\n" | crontab -u root -
+if [[ ! $CRONTAB = *$CRON* ]]; then
+  add-apt-repository -y ppa:certbot/certbot \
+    && apt update \
+    && apt install -y python-certbot-apache
+
+  printf "$CRONTAB\n$CRON\n" | crontab -u root -
+fi
 
 ## colors
-git clone https://github.com/chriskempson/base16-shell.git \
-  ~/.config/base16-shell
+if [ ! -f ~/.config/base16-shell ]; then
+  git clone https://github.com/chriskempson/base16-shell.git \
+    ~/.config/base16-shell
+fi
 
 ## iterm2
-curl -L https://iterm2.com/shell_integration/zsh \
-  -o ~/.iterm2_shell_integration.zsh
+if [ ! -f ~/.iterm2_shell_integration ]; then
+  curl -L https://iterm2.com/shell_integration/zsh \
+    -o ~/.iterm2_shell_integration.zsh
+fi
 
 ## npm
 npm install -g \
@@ -54,31 +62,43 @@ npm install -g \
 gem install colorls pry sass
 
 ## shell
-echo "/usr/bin/zsh" | sudo tee -a /etc/shells
-chsh -s /usr/bin/zsh
+if ! grep -Fxq "/usr/bin/zsh" /etc/shells
+then
+  echo "/usr/bin/zsh" | sudo tee -a /etc/shells
+  chsh -s /usr/bin/zsh
+fi
 
 ## tmux
 function tmux_append {
   echo $1 | sudo tee -a $DIR/../.tmux.conf
 }
-tmux_append "bind-key -t vi-copy v begin-selection"
-tmux_append "bind-key -t vi-copy y copy-pipe \"xclip -sel clip -i\""
-tmux_append "source-file $DIR/../tmux.conf"
+
+if [ ! -f $DIR/../.tmux.conf ]; then
+  tmux_append "bind-key -t vi-copy v begin-selection"
+  tmux_append "bind-key -t vi-copy y copy-pipe \"xclip -sel clip -i\""
+  tmux_append "source-file $DIR/../tmux.conf"
+fi
 
 ## vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim -c :PlugInstall -c :qa
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim -c :PlugInstall -c :qa
+fi
 
 # FINISH
 
 ## cron
 CRON="0 0 * * * cd $DIR/../ && git pull origin master >/dev/null 2>&1"
 
-printf "$(crontab -u root -l)\n$CRON\n" | crontab -u root -
+if [[ ! $CRONTAB = *$CRON* ]]; then
+  printf "$CRONTAB\n$CRON\n" | crontab -u root -
+fi
 
 ## dirs 
-mkdir -p ~/.vim/tmp
+if [ ! -d ~/.vim/tmp ]; then
+  mkdir -p ~/.vim/tmp
+fi
 
 ## symlinks
 ln -sf $DIR/../agignore ~/.agignore

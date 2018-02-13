@@ -10,6 +10,7 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   automysqlbackup \
   build-essential \
   htop \
+  imagemagick \
   libffi-dev/xenial \
   nodejs-legacy \
   npm \

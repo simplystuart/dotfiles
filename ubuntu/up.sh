@@ -25,7 +25,7 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
 ## certbot
 CRON="30 2 * * 1 certbot renew"
 
-if [[ ! $CRONTAB = *$CRON* ]]; then
+if [[ ! $CRONTAB = *"$CRON"* ]]; then
   add-apt-repository -y ppa:certbot/certbot \
     && apt update \
     && apt install -y python-certbot-apache
@@ -91,7 +91,7 @@ fi
 ## cron
 CRON="0 0 * * * cd $DIR/../ && git pull origin master >/dev/null 2>&1"
 
-if [[ ! $CRONTAB = *$CRON* ]]; then
+if [[ ! $CRONTAB = *"$CRON"* ]]; then
   printf "$CRONTAB\n$CRON\n" | crontab -u root -
 fi
 

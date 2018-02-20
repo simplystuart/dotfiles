@@ -6,9 +6,11 @@ DIR="$(pwd)/$(dirname $0)"
 # INSTALL 
 
 ## brew
-ruby -e "$(curl -fsSL ${BREW})"
+if ! [ -x "$(command -v brew)" ]; then
+  ruby -e "$(curl -fsSL ${BREW})"
+fi
 
-cask install xquartz
+brew cask install xquartz
 
 brew install \
   ffmpeg \
@@ -35,12 +37,16 @@ brew install \
   zsh
 
 ## colors
-git clone https://github.com/chriskempson/base16-shell.git \
-  ~/.config/base16-shell
+if [ ! -f ~/.config/base16-shell ]; then
+  git clone https://github.com/chriskempson/base16-shell.git \
+    ~/.config/base16-shell
+fi
 
 ## iterm2
-curl -L https://iterm2.com/shell_integration/zsh \
-  -o ~/.iterm2_shell_integration.zsh
+if [ ! -f ~/.iterm2_shell_integration ]; then
+  curl -L https://iterm2.com/shell_integration/zsh \
+    -o ~/.iterm2_shell_integration.zsh
+fi
 
 ## npm
 npm install -g \
@@ -59,30 +65,43 @@ npm install -g \
 gem install colorls pry sass
 
 ## shell
-echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/zsh
+if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells
+then
+  echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+  chsh -s /usr/local/bin/zsh
+fi
 
 ## tmux
 function tmux_append {
   echo $1 | sudo tee -a $DIR/../.tmux.conf
 }
-tmux_append "bind-key -Tcopy-mode-vi 'v' send -X begin-selection"
-tmux_append "bind-key -Tcopy-mode-vi 'y' send -X copy-selection"
-tmux_append "source-file $DIR/../tmux.conf"
+
+if [ ! -f $DIR/../.tmux.conf ]; then
+  tmux_append "bind-key -Tcopy-mode-vi 'v' send -X begin-selection"
+  tmux_append "bind-key -Tcopy-mode-vi 'y' send -X copy-selection"
+  tmux_append "source-file $DIR/../tmux.conf"
+fi
 
 ## vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
 # FINISH
 
 ## dirs 
-mkdir ~/.ssh
-mkdir -p ~/.vim/tmp
+if [ ! -d ~/.ssh ]; then
+  mkdir ~/.ssh
+fi
+
+if [ ! -d ~/.vim/tmp ]; then
+  mkdir -p ~/.vim/tmp
+fi
 
 ## symlinks
-ln -s $DIR/bootup /usr/local/bin/bootup
-sudo ln -s $DIR/com.user.bootup.plist \
+ln -sf $DIR/bootup /usr/local/bin/bootup
+sudo ln -sf $DIR/com.user.bootup.plist \
   /Library/LaunchDaemons/com.user.bootup.plist
 
 ln -sf ~/Dropbox/.gitconfig ~/.gitconfig

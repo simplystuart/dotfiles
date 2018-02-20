@@ -13,6 +13,7 @@ fi
 brew cask install xquartz
 
 brew install \
+  automake \
   ffmpeg \
   git \
   mysql \

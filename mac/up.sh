@@ -66,10 +66,10 @@ npm install -g \
 gem install colorls pry sass
 
 ## shell
-if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells
+if ! grep -Fxq $(which zsh) /etc/shells
 then
-  echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-  chsh -s /usr/local/bin/zsh
+  echo $(which zsh) | sudo tee -a /etc/shells
+  sudo chsh -s $(which zsh)
 fi
 
 ## tmux

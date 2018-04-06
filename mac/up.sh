@@ -58,6 +58,7 @@ npm install -g \
   elm-github-install \
   elm-oracle \
   elm-test \
+  prettier \
   react-native-cli \
   uglify-js \
   yarn

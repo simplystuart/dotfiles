@@ -32,6 +32,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.sass PrettierAsync
+
 " silver searcher
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'

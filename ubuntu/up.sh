@@ -6,6 +6,8 @@ DIR="$(pwd)/$(dirname $0)"
 # INSTALL
 
 ## apt
+add-apt-repository ppa:jonathonf/vim -y
+
 apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   automysqlbackup \
   build-essential \

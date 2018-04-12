@@ -3,7 +3,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'elmcast/elm-vim'
 Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'sbdchd/neoformat'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
@@ -26,15 +26,21 @@ imap <S-Tab> <C-o>
 " margins
 set colorcolumn=81
 
+" neoformat
+let g:neoformat_enabled_css = ['prettier']
+let g:neoformat_enabled_js = ['prettier']
+let g:neoformat_enabled_json = ['prettier']
+let g:neoformat_enabled_json = ['prettier']
+let g:neoformat_enabled_md = ['prettier']
+let g:neoformat_enabled_sass = ['sass-convert']
+let g:neoformat_enabled_scss = ['prettier']
+autocmd BufWritePre *.css,*.js,*.json,*.sass,*.scss Neoformat
+
 " normal mappings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" prettier
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.sass PrettierAsync
 
 " silver searcher
 if executable('ag')

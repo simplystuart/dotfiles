@@ -61,6 +61,13 @@ npm install -g \
   uglify-js \
   yarn
 
+## php
+add-apt-repository ppa:ondrej/php -y
+apt update
+apt remove php7.0
+apt install -y php7.2
+apt install -y php-mysql
+
 ## ruby
 gem install colorls pry sass
 

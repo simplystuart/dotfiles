@@ -93,6 +93,7 @@ fi
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim -c :so ~/.vimrc
   vim -c :PlugInstall -c :qa
 fi
 
@@ -116,3 +117,6 @@ ln -sf $DIR/../inputrc ~/.inputrc
 ln -sf $DIR/../vimrc ~/.vimrc
 ln -sf $DIR/../zshrc ~/.zshrc
 ln -sf $DIR/../.tmux.conf ~/.tmux.conf
+
+## zsh
+exec $(which zsh) -l

@@ -3,6 +3,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'elmcast/elm-vim'
 Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'vim-ruby/vim-ruby'
 call plug#end()

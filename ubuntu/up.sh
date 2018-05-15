@@ -76,6 +76,7 @@ if ! grep -Fxq $(which zsh) /etc/shells
 then
   echo $(which zsh) | sudo tee -a /etc/shells
   sudo chsh -s $(which zsh)
+  exec zsh -l
 fi
 
 ## tmux
@@ -93,7 +94,7 @@ fi
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  vim -c :so ~/.vimrc
+  vim -c :so ~/.vimrc -c :qa
   vim -c :PlugInstall -c :qa
 fi
 

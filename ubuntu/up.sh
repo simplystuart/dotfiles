@@ -13,9 +13,11 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   build-essential \
   htop \
   imagemagick \
+  jpegoptim \
   libffi-dev/xenial \
   nodejs-legacy \
   npm \
+  optipng \
   ruby-dev \
   silversearcher-ag \
   software-properties-common \

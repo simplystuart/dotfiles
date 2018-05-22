@@ -108,6 +108,14 @@ if [ ! -f ~/.vim/autoload/plug.vim ]; then
   vim -c :PlugInstall -c :qa
 fi
 
+## wp cli
+CLI="https://raw.githubusercontent.com/wp-cli"
+curl -O $CLI/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+wget $CLI/master/utils/wp-completion.bash -O /var/www/.wp-completion.bash
+echo "source /var/www/.wp-completion.bash" > /var/www/.bash_profile
+
 # FINISH
 
 ## cron

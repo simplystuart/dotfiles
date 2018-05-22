@@ -3,6 +3,8 @@
 CRONTAB=$(crontab -u root -l)
 DIR="$(pwd)/$(dirname $0)"
 
+cp -rp $DIR/scripts ~/
+
 # INSTALL
 
 ## apt
@@ -48,6 +50,12 @@ if [ ! -f ~/.iterm2_shell_integration ]; then
   curl -L https://iterm2.com/shell_integration/zsh \
     -o ~/.iterm2_shell_integration.zsh
 fi
+
+## mysql
+wget \
+  https://launchpadlibrarian.net/78745738/tuning-primer.sh \
+  -O ~/scripts/tuning-primer.sh
+chmod +x ~/scripts/tuning-primer.sh
 
 ## npm
 npm install -g \

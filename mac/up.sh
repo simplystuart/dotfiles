@@ -16,6 +16,8 @@ brew install \
   automake \
   ffmpeg \
   git \
+  glslang \
+  glslviewer \
   mysql \
   ncftp \
   node \

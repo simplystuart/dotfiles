@@ -5,6 +5,7 @@ Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'tikhomirov/vim-glsl'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
 

@@ -43,7 +43,7 @@ let g:prettier#config#parser = 'babylon'
 let g:prettier#config#config_precedence = 'prefer-file'
 let g:prettier#config#prose_wrap = 'preserve'
 
-autocmd BufWritePre *.css,*.js,*.json,*.md,*.scss PrettierAsync
+autocmd BufWritePre *.css,*.js,*.md,*.scss PrettierAsync
 
 " normal mappings
 nnoremap <C-J> <C-W><C-J>

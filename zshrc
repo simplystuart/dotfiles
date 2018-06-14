@@ -65,4 +65,4 @@ man() {
 }
 
 # yarn
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.yarn/bin:$PATH"

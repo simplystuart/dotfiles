@@ -66,3 +66,36 @@ man() {
 
 # yarn
 export PATH="$HOME/.local/bin:$HOME/.yarn/bin:$PATH"
+
+# zplug
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+fi
+
+source ~/.zplug/init.zsh
+
+zplug "iam4x/zsh-iterm-touchbar"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load
+
+#zsh-iterm-touchbar
+GIT_STASHED="$"
+GIT_UNCOMMITTED="+"
+GIT_UNPULLED="⇣"
+GIT_UNPUSHED="⇡"
+GIT_UNSTAGED="!"
+GIT_UNTRACKED="?"
+TOUCHBAR_GIT_ENABLED=true
+YARN_ENABLED=true

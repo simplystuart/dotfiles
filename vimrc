@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
+Plug 'elixir-editors/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'

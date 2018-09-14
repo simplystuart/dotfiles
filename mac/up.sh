@@ -21,6 +21,7 @@ brew install \
   mysql \
   ncftp \
   node \
+  npx \
   postgresql \
   python3 \
   rbenv \

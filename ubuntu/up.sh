@@ -19,6 +19,7 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   libffi-dev/xenial \
   nodejs-legacy \
   npm \
+  npx \
   optipng \
   ruby-dev \
   silversearcher-ag \

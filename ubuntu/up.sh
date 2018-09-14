@@ -83,12 +83,20 @@ apt install -y php-mysql
 ## ruby
 gem install colorls pry sass
 
+# CONFIGURE
+
+## link!
+ln -sf $DIR/../agignore ~/.agignore
+ln -sf $DIR/../inputrc ~/.inputrc
+ln -sf $DIR/../vimrc ~/.vimrc
+ln -sf $DIR/../zshrc ~/.zshrc
+ln -sf $DIR/../.tmux.conf ~/.tmux.conf
+
 ## shell
 if ! grep -Fxq $(which zsh) /etc/shells
 then
   echo $(which zsh) | sudo tee -a /etc/shells
   sudo chsh -s $(which zsh)
-  exec zsh -l
 fi
 
 ## tmux
@@ -131,13 +139,6 @@ fi
 if [ ! -d ~/.vim/tmp ]; then
   mkdir -p ~/.vim/tmp
 fi
-
-## symlinks
-ln -sf $DIR/../agignore ~/.agignore
-ln -sf $DIR/../inputrc ~/.inputrc
-ln -sf $DIR/../vimrc ~/.vimrc
-ln -sf $DIR/../zshrc ~/.zshrc
-ln -sf $DIR/../.tmux.conf ~/.tmux.conf
 
 ## zsh
 exec $(which zsh) -l

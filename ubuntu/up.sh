@@ -21,6 +21,7 @@ apt update && apt upgrade -y && apt full-upgrade -y && apt install -y \
   npm \
   npx \
   optipng \
+  ruby \
   ruby-dev \
   silversearcher-ag \
   software-properties-common \

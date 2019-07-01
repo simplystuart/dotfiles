@@ -1,32 +1,34 @@
 #!/usr/bin/env bash
 
-dotfiles="https://raw.githubusercontent.com/simplystuart/dotfiles/master/"
+dotfiles=/Users/stuartdum/Projects/dotfiles
+home=/Users/stuartdum
+url="https://raw.githubusercontent.com/simplystuart/dotfiles/master/"
 
 # CREATE DIRECTORIES
 
-if [ ! -d ~/.config ]; then
+if [ ! -d $home/.config ]; then
 	echo "Creating empty .config dir..."
-	mkdir -p ~/.config
+	mkdir -p $home/.config
 fi
 
-if [ ! -d ~/.config/nvim ]; then
+if [ ! -d $home/.config/nvim ]; then
 	echo "Creating empty .config/nvim dir..."
-	mkdir -p ~/.config/nvim
+	mkdir -p $home/.config/nvim
 fi
 
-if [ ! -d ~/.ssh ]; then
+if [ ! -d $home/.ssh ]; then
 	echo "Creating empty .ssh dir..."
-	mkdir ~/.ssh
+	mkdir $home/.ssh
 fi
 
-if [ ! -d ~/.vim/tmp ]; then
+if [ ! -d $home/.vim/tmp ]; then
 	echo "Creating empty .vim/tmp dir..."
-	mkdir -p ~/.vim/tmp
+	mkdir -p $home/.vim/tmp
 fi
 
-if [ ! -d ~/Projects ]; then
+if [ ! -d $home/Projects ]; then
 	echo "Creating empty Projects dir..."
-	mkdir ~/Projects
+	mkdir $home/Projects
 fi
 
 # CLONE DOTFILES PROJECT
@@ -39,33 +41,33 @@ cd ..
 # RUN SCRIPTS
 
 echo "Running brew script..."
-sh -c "$(curl -fsSL ${dotfiles}brew.sh)"
+sh -c "$(curl -fsSL ${url}brew.sh)"
 
 echo "Running casks script..."
-sh -c "$(curl -fsSL ${dotfiles}casks.sh)"
+sh -c "$(curl -fsSL ${url}casks.sh)"
 
 echo "Running vim script..."
-sh -c "$(curl -fsSL ${dotfiles}vim.sh)"
+sh -c "$(curl -fsSL ${url}vim.sh)"
 
 echo "Running yarn script..."
-sh -c "$(curl -fsSL ${dotfiles}yarn.sh)"
+sh -c "$(curl -fsSL ${url}yarn.sh)"
 
 echo "Running zsh script..."
-sh -c "$(curl -fsSL ${dotfiles}zsh.sh)"
+sh -c "$(curl -fsSL ${url}zsh.sh)"
 
 
 # CREATE SYMLINKS
 
 echo "Creating symlinks..."
-ln -sf $DIR/agignore ~/.agignore
-ln -sf $DIR/aliases ~/.aliases
-ln -sf $DIR/init.vim ~/.config/nvim/init.vim
-ln -sf $DIR/inputrc ~/.inputrc
-ln -sf $DIR/tmux.conf ~/.tmux.conf
-ln -sf $DIR/vimrc ~/.vimrc
-ln -sf ~/Dropbox/.gitconfig ~/.gitconfig
-ln -sf ~/Dropbox/.ssh/config ~/.ssh/config
-ln -sf ~/Dropbox/.zshrc ~/.zshrc
+ln -sf $dotfiles/agignore $home/.agignore
+ln -sf $dotfiles/aliases $home/.aliases
+ln -sf $dotfiles/init.vim $home/.config/nvim/init.vim
+ln -sf $dotfiles/inputrc $home/.inputrc
+ln -sf $dotfiles/tmux.conf $home/.tmux.conf
+ln -sf $dotfiles/vimrc $home/.vimrc
+ln -sf $home/Dropbox/.gitconfig $home/.gitconfig
+ln -sf $home/Dropbox/.ssh/config $home/.ssh/config
+ln -sf $home/Dropbox/.zshrc $home/.zshrc
 
 # FINISH
 

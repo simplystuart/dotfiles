@@ -21,6 +21,7 @@ packages=(
 	shpotify
 	ssh-copy-id
 	tmux
+	vim
 	watch
 	wine
 	wget
@@ -43,12 +44,6 @@ for package in "${packages[@]}"; do
 	echo "Installing $package..."
 	brew install "$package"
 done
-
-echo "Installing vim..."
-brew install vim --with-override-system-vi
-
-echo "Installing neovim..."
-brew install neovim --with-override-system-vi
 
 echo "Cleaning up..."
 brew cleanup

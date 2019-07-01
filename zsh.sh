@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-oh_my_zsh="//raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+oh_my_zsh="https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
 
 echo "Configuring zsh..."
 
 echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL ${oh_my_zsh})"
 
-#TODO: is this working properly?
 echo "Updating shell..."
 if ! grep -Fxq $(which zsh) /etc/shells
 then

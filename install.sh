@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles="//raw.githubusercontent.com/simplystuart/dotfiles/master/"
+dotfiles="https://raw.githubusercontent.com/simplystuart/dotfiles/master/"
 
 # CREATE DIRECTORIES
 

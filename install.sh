@@ -58,6 +58,10 @@ sh -c "$(curl -fsSL ${url}yarn.sh)"
 echo "Running zsh script..."
 sh -c "$(curl -fsSL ${url}zsh.sh)"
 
+# INSTALL N
+
+echo "Installing n..."
+npm install -g n
 
 # CREATE SYMLINKS
 

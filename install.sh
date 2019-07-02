@@ -68,9 +68,9 @@ ln -sf $dotfiles/init.vim $home/.config/nvim/init.vim
 ln -sf $dotfiles/inputrc $home/.inputrc
 ln -sf $dotfiles/tmux.conf $home/.tmux.conf
 ln -sf $dotfiles/vimrc $home/.vimrc
+ln -sf $dotfiles/zshrc $home/.zshrc
 ln -sf $home/Dropbox/.gitconfig $home/.gitconfig
 ln -sf $home/Dropbox/.ssh/config $home/.ssh/config
-ln -sf $home/Dropbox/.zshrc $home/.zshrc
 
 # FINISH
 

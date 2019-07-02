@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 casks=(
+	adobe-creative-cloud
 	android-studio
-	basecamp docker
+	basecamp
+	docker
 	dropbox
 	firefox
 	google-backup-and-sync

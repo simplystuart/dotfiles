@@ -11,6 +11,7 @@ casks=(
 	google-chrome
 	iterm2
 	kitematic
+	microsoft-office
 	oversight
 	pocket-casts
 	slack

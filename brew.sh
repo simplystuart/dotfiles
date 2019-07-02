@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 packages=(
-  ag
+	ag
 	coreutils
 	curl
 	elixir

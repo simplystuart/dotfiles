@@ -46,6 +46,9 @@ sh -c "$(curl -fsSL ${url}brew.sh)"
 echo "Running casks script..."
 sh -c "$(curl -fsSL ${url}casks.sh)"
 
+echo "Running mac script..."
+sh -c "$(curl -fsSL ${url}mac.sh)"
+
 echo "Running vim script..."
 sh -c "$(curl -fsSL ${url}vim.sh)"
 

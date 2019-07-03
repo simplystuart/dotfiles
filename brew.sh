@@ -2,6 +2,7 @@
 
 packages=(
 	ag
+	cocoapods
 	coreutils
 	curl
 	elixir
@@ -12,6 +13,9 @@ packages=(
 	glslang
 	glslviewer 
 	grep
+	ideviceinstaller
+	imagemagick
+	ios-deploy
 	mysql
 	ncftp
 	neovim
@@ -24,8 +28,8 @@ packages=(
 	tmux
 	vim
 	watch
-	wine
 	wget
+	wine
 	yarn
 	youtube-dl
 	zsh
@@ -40,11 +44,21 @@ if ! [ -x "$(command -v brew)" ]; then
 	ruby -e "$(curl -fsSL ${url})"
 fi
 
-echo "Installing packages..."
+echo "Installing usbmuxd..."
+brew install --HEAD usbmuxd
+brew link usbmuxd
+
+echo "Installing libimobiledevice..."
+brew install --HEAD libimobiledevice
+
+echo "Installing remaining packages..."
 for package in "${packages[@]}"; do
 	echo "Installing $package..."
 	brew install "$package"
 done
+
+echo "Setting up pods from brew install..."
+pod setup
 
 echo "Cleaning up..."
 brew cleanup

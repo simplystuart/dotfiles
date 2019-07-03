@@ -22,6 +22,7 @@ packages=(
 	node
 	openssh
 	postgresql
+	python2
 	python3
 	shpotify
 	ssh-copy-id

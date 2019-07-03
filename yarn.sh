@@ -6,10 +6,14 @@ packages=(
 	elm-format
 	elm-oracle
 	elm-test
+	neovim
 	npx
 	prettier
 	uglify-js
 )
+
+echo "Installing n..."
+npm install -g n
 
 echo "Installing npm packages with yarn..."
 for package in "${packages[@]}"; do

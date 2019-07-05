@@ -6,13 +6,27 @@ Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tikhomirov/vim-glsl'
+Plug 'w0rp/ale'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 " When writing a buffer (no delay).
 call neomake#configure#automake('w')
+
+" ale
+let g:ale_fix_on_save = 1
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'css': ['prettier'],
+\   'javascript': ['prettier'],
+\   'markdown': ['prettier'],
+\}
+
+let g:ale_lint_delay = 1000
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
 
 " colors
 colorscheme base16-default-dark
@@ -32,23 +46,6 @@ imap <S-Tab> <C-o>
 
 " margins
 set colorcolumn=81
-
-" prettier
-let g:prettier#autoformat = 0
-let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#arrow_parens = 'avoid'
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#parser = 'babylon'
-let g:prettier#config#config_precedence = 'prefer-file'
-let g:prettier#config#prose_wrap = 'preserve'
-
-autocmd BufWritePre *.css,*.js,*.md,*.scss PrettierAsync
 
 " normal mappings
 nnoremap <C-J> <C-W><C-J>

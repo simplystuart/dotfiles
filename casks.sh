@@ -18,6 +18,7 @@ casks=(
 	spotify
 	typora
 	virtualbox
+	virtualbox-extension-pack
 	vlc
 	zoomus
 )

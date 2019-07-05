@@ -96,6 +96,10 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # brew
 export HOMEBREW_NO_ANALYTICS=1
 
+# haskell
+test -e ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env
+export PATH="$HOME/.local/bin:$PATH"
+
 # iterm2
 test -e ${HOME}/.iterm2_shell_integration.zsh \
   && source ${HOME}/.iterm2_shell_integration.zsh

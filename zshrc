@@ -95,6 +95,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # brew
 export HOMEBREW_NO_ANALYTICS=1
+export PATH="/usr/local/sbin:$PATH"
 
 # haskell
 test -e ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env

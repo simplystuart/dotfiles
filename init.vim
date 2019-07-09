@@ -15,6 +15,8 @@ call plug#end()
 call neomake#configure#automake('w')
 
 " ale
+highlight link ALEErrorSign ErrorMsg
+
 let g:ale_fix_on_save = 1
 
 let g:ale_fixers = {
@@ -24,9 +26,12 @@ let g:ale_fixers = {
 \   'markdown': ['prettier'],
 \}
 
-let g:ale_lint_delay = 1000
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
+let g:ale_lint_delay = 2000
+let g:ale_set_highlights = 0
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '⚑'
+let g:ale_sign_warning = '⚐'
+
 
 " colors
 colorscheme base16-default-dark

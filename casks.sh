@@ -2,6 +2,7 @@
 
 casks=(
 	adobe-creative-cloud
+	amazon-music
 	android-studio
 	basecamp
 	docker

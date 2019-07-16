@@ -4,6 +4,7 @@ packages=(
 	clean-css-cli
 	elm
 	elm-format
+	elm-json
 	elm-oracle
 	elm-test
 	neovim

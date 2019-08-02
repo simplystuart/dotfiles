@@ -3,6 +3,7 @@
 packages=(
 	clean-css-cli
 	elm
+	elm-analyse
 	elm-format
 	elm-json
 	elm-oracle

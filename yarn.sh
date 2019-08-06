@@ -8,6 +8,7 @@ packages=(
 	elm-json
 	elm-oracle
 	elm-test
+	eslint
 	neovim
 	npx
 	prettier

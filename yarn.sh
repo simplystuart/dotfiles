@@ -4,6 +4,7 @@ packages=(
 	clean-css-cli
 	elm
 	elm-analyse
+	elm-doc-preview
 	elm-format
 	elm-json
 	elm-oracle

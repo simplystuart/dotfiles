@@ -7,6 +7,7 @@ casks=(
 	basecamp
 	docker
 	dropbox
+	figma
 	firefox
 	google-backup-and-sync
 	google-chrome

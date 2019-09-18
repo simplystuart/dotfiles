@@ -22,6 +22,7 @@ packages=(
 	neovim
 	node
 	openssh
+	pastel
 	postgresql
 	python2
 	python3

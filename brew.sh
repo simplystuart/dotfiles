@@ -11,7 +11,7 @@ packages=(
 	findutils
 	git
 	glslang
-	glslviewer 
+	glslviewer
 	grep
 	ideviceinstaller
 	imagemagick
@@ -21,6 +21,7 @@ packages=(
 	ncftp
 	neovim
 	node
+	openconnect
 	openssh
 	pastel
 	postgresql

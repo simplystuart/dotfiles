@@ -4,6 +4,7 @@ casks=(
 	adobe-creative-cloud
 	amazon-music
 	android-studio
+	balenaetcher
 	basecamp
 	docker
 	dropbox

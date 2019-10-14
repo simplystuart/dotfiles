@@ -17,6 +17,7 @@ packages=(
 	imagemagick
 	ios-deploy
 	lazygit
+	mkcert
 	mysql
 	ncftp
 	neovim

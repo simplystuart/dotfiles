@@ -11,6 +11,7 @@ packages=(
 	elm-test
 	eslint
 	neovim
+	ngrok
 	npx
 	prettier
 	uglify-js

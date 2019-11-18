@@ -28,6 +28,7 @@ packages=(
 	postgresql
 	python2
 	python3
+	rbenv
 	shpotify
 	ssh-copy-id
 	tmux

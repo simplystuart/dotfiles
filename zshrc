@@ -62,7 +62,9 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx z zsh-completions zsh-iterm-touchbar zsh-syntax-highlighting)
+plugins=(
+  git osx rbenv z zsh-completions zsh-iterm-touchbar zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 

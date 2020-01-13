@@ -71,7 +71,7 @@ endif
 " spelling
 autocmd BufRead,BufNewFile *.md,*.txt setlocal spell
 set complete+=kspell
-set spellfile=$HOME/.vim/.vim-spell-en.utf-8.add
+set spellfile=$HOME/.vim/spell/en.utf-8.add
 
 " syntax highlighting
 syntax on

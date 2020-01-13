@@ -16,6 +16,7 @@ packages=(
 	ideviceinstaller
 	imagemagick
 	ios-deploy
+	jpegoptim
 	lazygit
 	mkcert
 	mysql

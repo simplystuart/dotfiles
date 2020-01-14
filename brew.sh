@@ -30,6 +30,7 @@ packages=(
 	python2
 	python3
 	rbenv
+	redis
 	shpotify
 	ssh-copy-id
 	tmux

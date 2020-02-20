@@ -63,6 +63,8 @@ sh -c "$(curl -fsSL ${url}zsh.sh)"
 echo "Creating symlinks..."
 ln -sf $dotfiles/agignore $home/.agignore
 ln -sf $dotfiles/aliases $home/.aliases
+ln -sf $dotfiles/coc-settings.json $home/.config/nvim/coc-settings.json
+ln -sf $dotfiles/coc.vim $home/.config/nvim/coc.vim
 ln -sf $dotfiles/init.vim $home/.config/nvim/init.vim
 ln -sf $dotfiles/inputrc $home/.inputrc
 ln -sf $dotfiles/tmux.conf $home/.tmux.conf

@@ -1,14 +1,14 @@
+let g:polyglot_disabled = ['elm']
+
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'andys8/vim-elm-syntax'
 Plug 'chriskempson/base16-vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'elmcast/elm-vim'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
-Plug 'pangloss/vim-javascript'
-Plug 'tikhomirov/vim-glsl'
-Plug 'w0rp/ale'
-Plug 'vim-ruby/vim-ruby'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " When writing a buffer (no delay).

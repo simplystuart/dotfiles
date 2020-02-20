@@ -7,6 +7,7 @@ packages=(
 	elm-doc-preview
 	elm-format
 	elm-json
+	elm-language-server
 	elm-oracle
 	elm-test
 	eslint

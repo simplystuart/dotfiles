@@ -2,8 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'elmcast/elm-vim'
-Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 Plug 'tikhomirov/vim-glsl'
@@ -14,24 +14,8 @@ call plug#end()
 " When writing a buffer (no delay).
 call neomake#configure#automake('w')
 
-" ale
-highlight link ALEErrorSign ErrorMsg
-
-let g:ale_fix_on_save = 1
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'css': ['prettier'],
-\   'javascript': ['prettier'],
-\   'markdown': ['prettier'],
-\}
-
-let g:ale_lint_delay = 2000
-let g:ale_set_highlights = 0
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '⚑'
-let g:ale_sign_warning = '⚐'
-
+" coc
+runtime coc.vim
 
 " colors
 colorscheme base16-default-dark

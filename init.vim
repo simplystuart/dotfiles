@@ -41,8 +41,8 @@ endif
 " colors
 colorscheme base16-default-dark
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+	let base16colorspace=256
+	source ~/.vimrc_background
 endif
 
 " indenting
@@ -62,12 +62,12 @@ nnoremap <C-H> <C-W><C-H>
 
 " silver searcher
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
+	let g:ackprg = 'ag --vimgrep --smart-case'
 
-  cnoreabbrev ag Ack
-  cnoreabbrev aG Ack
-  cnoreabbrev Ag Ack
-  cnoreabbrev AG Ack
+	cnoreabbrev ag Ack
+	cnoreabbrev aG Ack
+	cnoreabbrev Ag Ack
+	cnoreabbrev AG Ack
 endif
 
 " spelling

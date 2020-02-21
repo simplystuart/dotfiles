@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 packages=(
+	bash-language-server
 	clean-css-cli
 	elm
 	elm-analyse

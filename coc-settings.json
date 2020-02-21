@@ -1,5 +1,16 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["css", "elm", "js", "Markdown"],
+  "codeLens.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript"],
+  "eslint.packageManager": "yarn",
   "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
     "elmLS": {
       "command": "elm-language-server",
       "filetypes": ["elm"],
@@ -8,7 +19,5 @@
         "elmAnalyseTrigger": "change"
       }
     }
-  },
-  "codeLens.enable": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "js", "Markdown"]
+  }
 }

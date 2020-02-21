@@ -1,21 +1,42 @@
 let g:polyglot_disabled = ['elm']
 
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'Yggdroot/indentLine'
 Plug 'andys8/vim-elm-syntax'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " When writing a buffer (no delay).
 call neomake#configure#automake('w')
 
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16_grayscale'
+
 " coc
-runtime coc.vim
+let g:coc_global_extensions = [
+	\ 'coc-elixir',
+	\ 'coc-eslint',
+	\ 'coc-json',
+	\ 'coc-prettier',
+	\ 'coc-solargraph',
+	\ 'coc-yaml'
+	\ ]
+
+if filereadable(expand("~/.config/nvim/coc.vim"))
+	source ~/.config/nvim/coc.vim
+endif
 
 " colors
 colorscheme base16-default-dark
@@ -23,9 +44,6 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-
-" elm
-let g:elm_format_autosave = 1
 
 " indenting
 filetype plugin indent on

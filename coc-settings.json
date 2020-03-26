@@ -1,6 +1,12 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "elm", "js", "Markdown"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "elm",
+    "javascript",
+    "markdown"
+  ],
   "codeLens.enable": true,
+  "diagnostic.maxWindowHeight": 30,
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": ["javascript"],
   "eslint.packageManager": "yarn",
@@ -19,5 +25,6 @@
         "elmAnalyseTrigger": "change"
       }
     }
-  }
+  },
+  "prettier.disableSuccessMessage": true
 }

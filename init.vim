@@ -21,6 +21,7 @@ call plug#end()
 call neomake#configure#automake('w')
 
 " airline
+let g:airline_extensions = ['coc', 'tabline', 'quickfix']
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_grayscale'
 

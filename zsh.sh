@@ -27,6 +27,12 @@ if [ ! -d "$ZSH/custom/plugins/zsh-iterm-touchbar" ]; then
 		${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-iterm-touchbar
 fi
 
+if [ ! -d "$ZSH/custom/plugins/zsh-nvm" ]; then
+	echo "Installing zsh-nvm plugin..."
+	git clone https://github.com/lukechilds/zsh-nvm \
+		${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-nvm
+fi
+
 if [ ! -d "$ZSH/custom/plugins/zsh-syntax-highlighting" ]; then
 	echo "Installing zsh-syntax-highlighting plugin..."
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
@@ -36,7 +42,7 @@ fi
 if [ ! -f ~/.config/base16-shell ]; then
 	echo "Installing base16 shell integration..."
 	git clone https://github.com/chriskempson/base16-shell.git \
-    	~/.config/base16-shell
+		~/.config/base16-shell
 fi
 
 if [ ! -f ~/.iterm2_shell_integration ]; then

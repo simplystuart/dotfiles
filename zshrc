@@ -63,7 +63,14 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git osx rbenv z zsh-completions zsh-iterm-touchbar zsh-syntax-highlighting
+  git
+  osx
+  rbenv
+  z
+  zsh-completions
+  zsh-iterm-touchbar
+  zsh-nvm
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,10 +114,13 @@ export PATH="$HOME/.local/bin:$PATH"
 test -e ${HOME}/.iterm2_shell_integration.zsh \
   && source ${HOME}/.iterm2_shell_integration.zsh
 
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 # zsh completions
 autoload -U compinit && compinit
 
-#zsh-iterm-touchbar
+# zsh-iterm-touchbar
 GIT_STASHED="$"
 GIT_UNCOMMITTED="+"
 GIT_UNPULLED="⇣"

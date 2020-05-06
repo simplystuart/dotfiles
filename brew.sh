@@ -2,6 +2,7 @@
 
 packages=(
 	ag
+	awscli
 	cocoapods
 	coreutils
 	curl

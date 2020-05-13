@@ -38,6 +38,9 @@ for cask in "${casks[@]}"; do
 	brew cask install "$cask"
 done
 
+echo "Installing cask-ugrade..."
+brew tap buo/cask-upgrade
+
 echo "Cleaning up..."
 brew cleanup
 

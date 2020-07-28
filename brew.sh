@@ -6,6 +6,7 @@ packages=(
 	cocoapods
 	coreutils
 	curl
+	direnv
 	elixir
 	exiftool
 	ffmpeg

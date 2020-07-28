@@ -115,6 +115,11 @@ export PATH="$HOME/.local/bin:$PATH"
 test -e ${HOME}/.iterm2_shell_integration.zsh \
   && source ${HOME}/.iterm2_shell_integration.zsh
 
+# nix
+if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then
+  . ${HOME}/.nix-profile/etc/profile.d/nix.sh;
+fi
+
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 

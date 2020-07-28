@@ -52,6 +52,9 @@ sh -c "$(curl -fsSL ${url}gems.sh)"
 echo "Running mac script..."
 sh -c "$(curl -fsSL ${url}mac.sh)"
 
+echo "Running nix script..."
+sh -c "$(curl -fsSL ${url}nix.sh)"
+
 echo "Running vim script..."
 sh -c "$(curl -fsSL ${url}vim.sh)"
 

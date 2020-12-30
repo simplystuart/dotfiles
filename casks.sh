@@ -6,9 +6,9 @@ casks=(
 	android-studio
 	balenaetcher
 	basecamp
+	brave-browser
 	docker
 	dropbox
-	figma
 	firefox
 	google-backup-and-sync
 	google-chrome

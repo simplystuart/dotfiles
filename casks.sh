@@ -34,7 +34,7 @@ brew update
 echo "Installing casks..."
 for cask in "${casks[@]}"; do
 	echo "Installing $cask..."
-	brew cask install "$cask"
+	brew install --cask "$cask"
 done
 
 echo "Installing cask-ugrade..."

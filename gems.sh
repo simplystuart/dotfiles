@@ -1,6 +1,8 @@
 
 #!/usr/bin/env bash
 
+export GEM_HOME="$HOME/.gem"
+
 gems=(
 	solargraph
 )

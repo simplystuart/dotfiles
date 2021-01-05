@@ -6,7 +6,6 @@ casks=(
 	android-studio
 	balenaetcher
 	basecamp
-	brave-browser
 	docker
 	dropbox
 	firefox

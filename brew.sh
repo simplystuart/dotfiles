@@ -11,6 +11,7 @@ packages=(
 	exiftool
 	ffmpeg
 	findutils
+	foreman
 	git
 	glslang
 	glslviewer
@@ -28,6 +29,7 @@ packages=(
 	openconnect
 	openssh
 	pastel
+	pgadmin4
 	postgresql
 	python2
 	python3
@@ -61,6 +63,9 @@ brew link usbmuxd
 
 echo "Installing libimobiledevice..."
 brew install --HEAD libimobiledevice
+
+echo "Installing heroku-cli..."
+brew tap heroku/brew && brew install heroku
 
 echo "Installing remaining packages..."
 for package in "${packages[@]}"; do

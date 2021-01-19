@@ -16,6 +16,7 @@ packages=(
 	ngrok
 	npx
 	prettier
+	tailwindcss
 	uglify-js
 )
 

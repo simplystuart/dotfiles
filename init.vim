@@ -27,11 +27,13 @@ let g:airline_theme = 'base16_grayscale'
 
 " coc
 let g:coc_global_extensions = [
+	\ 'coc-deno',
 	\ 'coc-elixir',
 	\ 'coc-eslint',
 	\ 'coc-json',
 	\ 'coc-prettier',
 	\ 'coc-solargraph',
+	\ 'coc-tsserver',
 	\ 'coc-yaml'
 	\ ]
 

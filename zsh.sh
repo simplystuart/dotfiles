@@ -15,6 +15,13 @@ if [ ! -d "$ZSH/custom/themes/spaceship-prompt" ]; then
 		"$ZSH/custom/themes/spaceship.zsh-theme"
 fi
 
+if [ ! -d "$ZSH/custom/plugins/deno" ]; then
+	echo "installing deno..."
+	git clone https://github.com/denysdovhan/spaceship-prompt.git \
+	mkdir ~/.oh-my-zsh/custom/plugins/deno
+	deno completions zsh > ~/.oh-my-zsh/custom/plugins/deno/_deno
+fi
+
 if [ ! -d "$ZSH/custom/plugins/zsh-completions" ]; then
 	echo "Installing zsh-completions plugin..."
 	git clone https://github.com/zsh-users/zsh-completions \

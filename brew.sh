@@ -6,6 +6,7 @@ packages=(
 	cocoapods
 	coreutils
 	curl
+	deno
 	direnv
 	elixir
 	exiftool

@@ -53,8 +53,8 @@ echo "Installing system packages with homebrew..."
 
 echo "Installing homebrew..."
 if ! [ -x "$(command -v brew)" ]; then
-	url="https://raw.githubusercontent.com/Homebrew/install/master/install"
-	ruby -e "$(curl -fsSL ${url})"
+	url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+	/bin/bash -c "$(curl -fsSL ${url})"
 fi
 
 echo "Installing usbmuxd..."

@@ -8,7 +8,6 @@
   "codeLens.enable": true,
   "diagnostic.maxWindowHeight": 30,
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript"],
   "eslint.packageManager": "yarn",
   "languageserver": {
     "bash": {

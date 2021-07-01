@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Yggdroot/indentLine'
 Plug 'andys8/vim-elm-syntax'
 Plug 'chriskempson/base16-vim'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -30,6 +31,7 @@ let g:coc_global_extensions = [
 	\ 'coc-deno',
 	\ 'coc-elixir',
 	\ 'coc-eslint',
+	\ 'coc-graphql',
 	\ 'coc-json',
 	\ 'coc-prettier',
 	\ 'coc-solargraph',

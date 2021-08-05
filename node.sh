@@ -1,35 +1,27 @@
 #!/usr/bin/env bash
 
 packages=(
+	@elm-tooling/elm-language-server
 	bash-language-server
-	clean-css-cli
-	elm
-	elm-analyse
-	elm-doc-preview
-	elm-format
-	elm-json
-	elm-language-server
-	elm-oracle
-	elm-test
 	eslint
 	neovim
 	ngrok
-	npx
 	prettier
-	tailwindcss
-	uglify-js
 )
 
 echo "Installing n..."
 npm install -g n
 
-echo "Installing npm packages with yarn..."
+echo "Installing nvm..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+echo "Installing npm packages..."
 for package in "${packages[@]}"; do
 	echo "Installing $package..."
-	yarn global add "$package"
+	npm install -g "$package"
 done
 
 echo "Cleaning up..."
-yarn autoclean
+npm cache clean --force
 
 echo "Installed ${#packages[@]} packages globally!"

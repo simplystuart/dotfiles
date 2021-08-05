@@ -3,7 +3,8 @@
     "css",
     "elm",
     "javascript",
-    "markdown"
+    "markdown",
+    "typescript"
   ],
   "codeLens.enable": true,
   "diagnostic.maxWindowHeight": 30,

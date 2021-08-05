@@ -38,6 +38,11 @@ cd ~/Projects
 git clone https://github.com/simplystuart/dotfiles.git
 cd ..
 
+# INSTALL ROSETTA
+
+echo "Installing Rosetta..."
+softwareupdate --install-rosetta
+
 # RUN SCRIPTS
 
 echo "Running brew script..."
@@ -46,20 +51,11 @@ sh -c "$(curl -fsSL ${url}brew.sh)"
 echo "Running casks script..."
 sh -c "$(curl -fsSL ${url}casks.sh)"
 
-echo "Running gems script..."
-sh -c "$(curl -fsSL ${url}gems.sh)"
-
-echo "Running mac script..."
-sh -c "$(curl -fsSL ${url}mac.sh)"
-
-echo "Running nix script..."
-sh -c "$(curl -fsSL ${url}nix.sh)"
+echo "Running node script..."
+sh -c "$(curl -fsSL ${url}node.sh)"
 
 echo "Running vim script..."
 sh -c "$(curl -fsSL ${url}vim.sh)"
-
-echo "Running yarn script..."
-sh -c "$(curl -fsSL ${url}yarn.sh)"
 
 echo "Running zsh script..."
 sh -c "$(curl -fsSL ${url}zsh.sh)"

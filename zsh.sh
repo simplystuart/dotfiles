@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ohmyzsh="https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+ohmyzsh="https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
 
 echo "Configuring zsh..."
 
@@ -17,7 +17,7 @@ fi
 
 if [ ! -d "$ZSH/custom/plugins/deno" ]; then
 	echo "installing deno..."
-	git clone https://github.com/denysdovhan/spaceship-prompt.git \
+	git clone https://github.com/denysdovhan/spaceship-prompt.git
 	mkdir ~/.oh-my-zsh/custom/plugins/deno
 	deno completions zsh > ~/.oh-my-zsh/custom/plugins/deno/_deno
 fi
@@ -69,7 +69,6 @@ echo "Downloading iterm2 colors..."
 base16=https://raw.githubusercontent.com/martinlindhe/base16-iterm2/master
 curl -o ~/Downloads/base16-materia-256.itermcolors \
 	${base16}/itermcolors/base16-materia-256.itermcolors
-
 
 echo "Updating color scheme..."
 bash base16_materia

@@ -1,4 +1,3 @@
-alias ea="elm-analyse"
-alias sudo="sudo "
+alias brew_gruit="arch -x86_64 brew"
 alias vim="nvim"
 alias vimdiff="nvim -d"

@@ -2,8 +2,6 @@
 
 casks=(
 	adobe-creative-cloud
-	amazon-music
-	android-studio
 	balenaetcher
 	basecamp
 	docker
@@ -12,10 +10,7 @@ casks=(
 	google-backup-and-sync
 	google-chrome
 	iterm2
-	kitematic
 	microsoft-edge
-	microsoft-office
-	oversight
 	pocket-casts
 	slack
 	spotify
@@ -23,7 +18,7 @@ casks=(
 	virtualbox
 	virtualbox-extension-pack
 	vlc
-	zoomus
+	zoom
 )
 
 echo "Installing gui applications with homebrew casks..."

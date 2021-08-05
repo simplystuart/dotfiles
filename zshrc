@@ -67,7 +67,6 @@ plugins=(
   direnv
   git
   osx
-  rbenv
   z
   zsh-completions
   zsh-iterm-touchbar
@@ -109,25 +108,13 @@ BASE16_SHELL=$HOME/.config/base16-shell/
   && [ -s "$BASE16_SHELL"/profile_helper.sh ] \
   && eval "$("$BASE16_SHELL"/profile_helper.sh)"
 
-# brew
+# homebrew
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="/usr/local/sbin:$PATH"
-
-# haskell
-test -e ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env
-export PATH="$HOME/.local/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # iterm2
 test -e ${HOME}/.iterm2_shell_integration.zsh \
   && source ${HOME}/.iterm2_shell_integration.zsh
-
-# nix
-if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then
-  . ${HOME}/.nix-profile/etc/profile.d/nix.sh;
-fi
-
-# yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # zsh completions
 autoload -U compinit && compinit
@@ -141,3 +128,7 @@ GIT_UNSTAGED="!"
 GIT_UNTRACKED="?"
 TOUCHBAR_GIT_ENABLED=true
 YARN_ENABLED=true
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

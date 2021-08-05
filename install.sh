@@ -46,9 +46,6 @@ sh -c "$(curl -fsSL ${url}brew.sh)"
 echo "Running casks script..."
 sh -c "$(curl -fsSL ${url}casks.sh)"
 
-echo "Running gems script..."
-sh -c "$(curl -fsSL ${url}gems.sh)"
-
 echo "Running mac script..."
 sh -c "$(curl -fsSL ${url}mac.sh)"
 

@@ -34,7 +34,6 @@ let g:coc_global_extensions = [
 	\ 'coc-graphql',
 	\ 'coc-json',
 	\ 'coc-prettier',
-	\ 'coc-solargraph',
 	\ 'coc-tsserver',
 	\ 'coc-yaml'
 	\ ]

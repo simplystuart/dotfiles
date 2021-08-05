@@ -1,4 +1,2 @@
-alias ea="elm-analyse"
-alias sudo="sudo "
 alias vim="nvim"
 alias vimdiff="nvim -d"

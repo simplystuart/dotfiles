@@ -2,8 +2,6 @@
 
 packages=(
 	ag
-	awscli
-	cocoapods
 	coreutils
 	curl
 	deno
@@ -13,13 +11,12 @@ packages=(
 	ffmpeg
 	findutils
 	foreman
+	gh
 	git
 	glslang
 	glslviewer
 	grep
-	ideviceinstaller
 	imagemagick
-	ios-deploy
 	jpegoptim
 	lazygit
 	mkcert
@@ -27,23 +24,18 @@ packages=(
 	ncftp
 	neovim
 	node
-	openconnect
-	openssh
+	nvm
 	pastel
 	pgadmin4
 	postgresql
-	python2
-	python3
 	rbenv
 	redis
 	scc
 	shpotify
 	ssh-copy-id
 	tmux
-	vim
 	watch
 	wget
-	wine
 	yarn
 	youtube-dl
 	zsh
@@ -54,28 +46,25 @@ echo "Installing system packages with homebrew..."
 
 echo "Installing homebrew..."
 if ! [ -x "$(command -v brew)" ]; then
-	url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
-	/bin/bash -c "$(curl -fsSL ${url})"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo "Installing usbmuxd..."
-brew install --HEAD usbmuxd
-brew link usbmuxd
+echo "Installing homebrew on Rosetta..."
+if ! [ -x "$(command -v arch -x86_64 brew)" ]; then
+	arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Installing libimobiledevice..."
-brew install --HEAD libimobiledevice
+echo "Installing gigalixir-cli..."
+brew tap gigalixir/brew && brew install gigalixir
 
 echo "Installing heroku-cli..."
 brew tap heroku/brew && brew install heroku
+heroku autocomplete --refresh-cache
 
 echo "Installing remaining packages..."
 for package in "${packages[@]}"; do
 	echo "Installing $package..."
 	brew install "$package"
 done
-
-echo "Setting up pods from brew install..."
-pod setup
 
 echo "Cleaning up..."
 brew cleanup

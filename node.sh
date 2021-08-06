@@ -5,6 +5,7 @@ packages=(
 	bash-language-server
 	eslint
 	neovim
+	netlify-cli
 	ngrok
 	prettier
 )
